@@ -1,0 +1,69 @@
+﻿//declaring variables
+@theme: #ffd800;
+@heading-color: rgb(99, 200, 200);
+@baseFontSize: 15px;
+@baseLineHeight: 22px;
+@default-radius: 30px;
+@defaultShapeWidth: 300px;
+@size: 4px;
+@font-size: 16px;
+//variable math operations
+@borderSize: @defaultShapeWidth * 0.05;
+@defaultThemeColor: #0094ff;
+@borderColor: @defaultThemeColor - #222;
+
+
+.shape{
+    display:inline-block;
+    width:200px;
+    height:200px;
+    background:@defaultThemeColor;
+    margin:20px;
+    border: @borderSize solid @borderColor;
+}
+
+//creating a mixin with parameters for the border radius
+//to avoid repitition
+.RoundedShape (@radius: @default-radius) {
+    -webkit-border-radius:@radius;
+    -moz-border-radius:@radius;
+    border-radius:@radius;
+}
+
+.Round {
+    .RoundedShape(9999px);
+}
+
+.RoundedSqaure (@radius: @default-radius) {
+    .RoundedShape(@default-radius);
+}
+
+
+.base_button {
+    border-radius: @size;
+    display: inline-block;
+    font-size: @font-size;
+    color: #fff;
+}
+
+.button (@base, @hover) {
+    .base_button;
+    background-color: @base;
+    padding-bottom: @size;
+
+    .text {
+        .base_button;
+        background-color: @hover;
+        padding: @size + 4;
+
+        &:hover
+        {
+            //if you use position with a placement,
+            //the element moves depending on how many
+            //pixels you define in the other elements
+            position: relative;
+            top: -1px;
+        }
+
+    }   
+}

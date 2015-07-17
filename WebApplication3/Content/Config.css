@@ -1,0 +1,20 @@
+﻿.shape {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: #0094ff;
+  margin: 20px;
+  border: 15px solid #0072dd;
+}
+.Round {
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  border-radius: 9999px;
+}
+.base_button {
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 16px;
+  color: #fff;
+}
+/*# sourceMappingURL=Config.css.map */

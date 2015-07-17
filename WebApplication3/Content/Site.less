@@ -1,0 +1,119 @@
+﻿//the id selector uses the id attribute of an HTML element to select a specific element.
+//an id should be unique within a page, so the id selector is used if you want a single,
+//unique element. (#)
+
+//the class selector selects elements with a specific class attribute
+//to select elements with a specific class, write a period character, followed
+//by the name of the class (.)
+
+@import "Config.less";
+
+body {
+    background-color: @theme;
+}
+
+
+//calling the various mixins on each shape
+#shape1 {
+    .Round;
+    &:hover {
+        background:#00ffff;
+    }
+}
+
+#shape2 {
+    .Round;
+    &:hover {
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+        background: #808080;
+    }
+}
+
+#shape3 {
+    .RoundedSqaure;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+/*@-webkit-keyframes example {
+    0% {
+        background-color: red;
+        left: 0px; top: 0;
+    }
+
+    25% {
+        background-color: yellow;
+        left: 200px; top: 0;
+    }
+
+    50% {
+        background-color: blue;
+        left: 200px; top: 200px;
+    }
+
+    75% {
+        background-color: green;
+        left: 0; top: 200px;
+    }
+
+    100% {
+        background-color: red;
+        left: 0; top: 0;
+    }
+}
+
+
+#shape4 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+     -webkit-animation-name: example; /* Chrome, Safari, Opera 
+    -webkit-animation-duration: 4s;*/  //Chrome, Safari, Opera
+
+}
+
+h1 {
+    color: @heading-color;
+    font-weight: 300;
+}
+
+p {
+    font-size: @baseFontSize;
+    line-height: @baseLineHeight;
+}
+
+#button1 {
+    .button (#00ffff, #5AC1E4);
+}
+
+#button2 {
+    .button (#ff0000, #ff6a00);
+}
+
+#button3 {
+    .button (#ff00dc, #ff006e);
+}
+
+#button4 {
+    .button (#00ff90, #b6ff00);
+}
+
+
+
+//NOTES
+
+//STATIC POSITIONING - the only reason why you would you use this
+//is if some positioning applied to an element and moved it.
+//you would use static to make sure it doesn't move
+
+//ABSOLUTE POSITIONING - lets you position the element
+//to wherever you want it by using top, left, bottom, right, etc.
+
+//FIXED POSITIONING - makes sure that the element stays at the
+//same position no matter where or how you move the browser
