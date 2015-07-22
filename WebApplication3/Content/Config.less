@@ -22,7 +22,7 @@
     border: @borderSize solid @borderColor;
 }
 
-//creating a mixin with parameters for the border radius
+//creating a parametric mixin for the border radius
 //to avoid repitition
 .RoundedShape (@radius: @default-radius) {
     -webkit-border-radius:@radius;
@@ -46,11 +46,15 @@
     color: #fff;
 }
 
+//the .button mixin inherits from the.base_button mixin
 .button (@base, @hover) {
     .base_button;
     background-color: @base;
     padding-bottom: @size;
 
+    //.text is nested inside of the .button mixin
+    //so it inherits everything that .button has inside of it and
+    //is able to apply it
     .text {
         .base_button;
         background-color: @hover;
